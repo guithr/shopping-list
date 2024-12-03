@@ -13,7 +13,7 @@
     <title>Quicklist - Lista de Compras</title>
 
     <!-- MY STYLE -->
-    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
 
     <!-- FONTS GOOGLE -->
     <link
@@ -22,6 +22,21 @@
     />
   </head>
   <body>
+    <header>
+      <img src="./assets/images/logo.svg" alt="Logotipo quicklist" />
+    </header>
+    <main class="container">
+      <a href="" class="btn-back">&lt;- Voltar</a>
+      <h1>Compras da semana</h1>
+
+      <form>
+        <div class="input-wrapper">
+          <label for="newitem"> </label>
+          <input type="text" id="newitem" placeholder="Adicione um novo item" />
+          <button type="submit">Adicionar item</button>
+        </div>
+      </form>
+    </main>
     <!-- MY SCRIPT -->
     <script src="./assets/script/app.js"></script>
   </body>
