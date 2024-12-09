@@ -69,7 +69,7 @@ function newItem(event) {
 
     const deleteIcon = document.createElement("span");
     deleteIcon.classList.add("alert-close");
-    deleteIcon.innerHTML = `<img src="./assets/images/icons/warning-circle-filled.svg" alt="">`;
+    deleteIcon.innerHTML = ` <img src="./assets/images/icons/delete-small.svg" alt="">`;
     alert.appendChild(deleteIcon);
 
     // Adicionar evento para remover o alerta
