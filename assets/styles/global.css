@@ -42,9 +42,12 @@ p {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 500;
+  color: var(--content-secondary);
 }
 a,
 button {
+  cursor: pointer;
+  border: none;
   font-size: 0.875rem;
   line-height: 1rem;
   font-weight: 500;
@@ -52,6 +55,9 @@ button {
   color: inherit;
 }
 
+li {
+  list-style: none;
+}
 body {
   width: 100%;
   height: 100vh;
