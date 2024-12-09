@@ -1,33 +1,3 @@
-/*
-const inputNewItem = document.getElementById("newItem");
-const buttonNewItem = document.getElementById("btnNewItem");
-const itemsList = document.getElementsByClassName("items-list");
-
-buttonNewItem.addEventListener("click", newItem);
-
-function newItem(event) {
-  event.preventDefault();
-
-  // LI.ITEM
-  const liItem = document.createElement("li");
-  liItem.classList.add("item");
-
-  // DIV SEGURANDA ELEMENTOS
-  const divItem = document.createElement("div");
-  liItem.appendChild(divItem);
-
-  const inputNewItem = document.createElement("input:checkbox");
-  const labelNewItem = document.createElement("label");
-  labelNewItem.innerText = inputNewItem.value;
-  divItem.appendChild(inputNewItem, labelNewItem);
-
-  const trashButton = document.createElement("button");
-  trashButton.innerHTML = `<img src="./assets/images/icons/trash.svg" alt="Excluir item" />`;
-  liItem.appendChild(trashButton);
-}
-
-*/
-
 // Selecionar elementos necessários
 const inputNewItem = document.getElementById("newItem"); // Corrigido ID
 const buttonNewItem = document.getElementById("btnNewItem");
@@ -73,7 +43,47 @@ function newItem(event) {
 
   // Adicionar evento para excluir o item
   trashButton.addEventListener("click", () => {
+    const itemContainer = document.querySelector(".items-container");
+
+    // Remover item da lista
     itemsList.removeChild(liItem);
+
+    // Verificar se já existe um alerta na tela
+    let existingAlert = document.querySelector(".alert");
+    if (existingAlert) {
+      existingAlert.remove(); // Remove o alerta existente
+    }
+
+    // Criar o alerta
+    const alert = document.createElement("div");
+    alert.classList.add("alert");
+
+    const alertIcon = document.createElement("span");
+    alertIcon.classList.add("alert-icon");
+    alertIcon.innerHTML = `<img src="./assets/images/icons/warning-circle-filled.svg" alt="">`;
+    alert.appendChild(alertIcon);
+
+    const pAlert = document.createElement("p");
+    pAlert.innerText = "O item foi removido da lista";
+    alert.appendChild(pAlert);
+
+    const deleteIcon = document.createElement("span");
+    deleteIcon.classList.add("alert-close");
+    deleteIcon.innerHTML = `<img src="./assets/images/icons/warning-circle-filled.svg" alt="">`;
+    alert.appendChild(deleteIcon);
+
+    // Adicionar evento para remover o alerta
+    deleteIcon.addEventListener("click", () => {
+      alert.remove();
+    });
+
+    // Adicionar o alerta ao container
+    itemContainer.appendChild(alert);
+
+    // Remover o alerta após 5 segundos (opcional)
+    setTimeout(() => {
+      alert.remove();
+    }, 5000);
   });
 
   // Adicionar botão de exclusão ao LI

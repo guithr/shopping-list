@@ -106,3 +106,28 @@ form {
     background: none;
   }
 }
+
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-danger); /* Cor de fundo (vermelho) */
+  padding: 0.75rem; /* Espaçamento interno */
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+}
+
+.alert-icon {
+  display: flex;
+  align-items: center;
+}
+
+.alert p {
+  flex: 1; /* Ocupa o espaço restante */
+  color: var(--always-white);
+}
+
+.alert-close {
+  background: none; /* Remove o fundo padrão do botão */
+  cursor: pointer; /* Mostra o cursor de mão */
+}
